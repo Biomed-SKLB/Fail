@@ -10,12 +10,6 @@
 ### 官方主页 / 主站
 https://biomed-sklb.github.io/Fail/
 
-### 翻车档案馆（二级页面）
-https://biomed-sklb.github.io/Fail/archive.html
-
-### 黑历史上交入口（主页内）
-https://biomed-sklb.github.io/Fail/#submit
-
 ---
 
 ## 📚 内容入口
