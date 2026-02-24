@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fail | Review Policy</title>
+  <meta name="description" content="Fail 审稿政策" />
+  <style>
+    :root { --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --radius:18px; --shadow:0 10px 30px rgba(17,24,39,.08);}
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(99,102,241,0.10), transparent 40%),
+        radial-gradient(circle at 90% 0%, rgba(16,185,129,0.08), transparent 35%),
+        var(--bg);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(980px,calc(100% - 32px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(246,247,251,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(229,231,235,.8)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#111827,#374151);box-shadow:var(--shadow)}
+    .nav-links{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-links a{padding:8px 12px;border-radius:12px;font-size:14px;color:#374151}
+    .nav-links a:hover{background:#eef2f7}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero,.section{margin-top:18px;padding:18px}
+    .pill{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe}
+    h1{margin:12px 0 8px;font-size:28px}
+    h2{margin:0 0 8px;font-size:18px}
+    .muted{color:var(--muted);font-size:14px}
+    .list{margin:0;padding-left:18px;display:grid;gap:8px;color:#374151;font-size:14px}
+    .box{border:1px solid var(--line);border-radius:12px;background:#f8fafc;padding:12px;font-size:13px;color:#334155}
+    .footer{margin:28px 0 36px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand"><div class="logo">F</div><div>Fail</div></div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="archive.html">归档</a>
+        <a href="submit.html">投稿</a>
+        <a href="guidelines.html">作者指南</a>
+        <a href="editorial-board.html">编委会</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero">
+      <span class="pill">Review Policy</span>
+      <h1>审稿政策（Review Policy）</h1>
+      <p class="muted">
+        这页用来告诉大家你的录用标准、审稿流程和更正政策。写出来之后，网站会非常“像期刊”。
+      </p>
+    </section>
+
+    <section class="card section">
+      <h2>1. 审稿模式（Review Model）</h2>
+      <ul class="list">
+        <li>编辑初筛（Editor Screening）</li>
+        <li>必要时进行同行建议（Peer Input，可选）</li>
+        <li>终审决定由编辑部作出</li>
+      </ul>
+      <div class="box" style="margin-top:10px;">
+        你可以先用最简单模式：<b>主编初筛 + 终审</b>。以后内容多了再加协作编辑。
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>2. 录用标准（Acceptance Criteria）</h2>
+      <ul class="list">
+        <li><b>真实性</b>：案例真实可信，信息基本完整</li>
+        <li><b>可复用性</b>：复盘总结对他人有帮助</li>
+        <li><b>结构清晰</b>：能看懂事故经过与错误来源</li>
+        <li><b>隐私合规</b>：无明显个人信息泄露风险</li>
+      </ul>
+    </section>
+
+    <section class="card section">
+      <h2>3. 决定类型（Editorial Decisions）</h2>
+      <ul class="list">
+        <li><b>Accept</b>：直接录用</li>
+        <li><b>Minor Revision</b>：小修后录用（补充细节/打码/格式）</li>
+        <li><b>Major Revision</b>：大修后重审（结构或信息不完整）</li>
+        <li><b>Reject</b>：不录用（虚构、隐私风险高、无复盘价值等）</li>
+      </ul>
+    </section>
+
+    <section class="card section">
+      <h2>4. 更正与撤稿（Corrections & Retractions）</h2>
+      <ul class="list">
+        <li>如投稿内容存在事实错误，可联系编辑部申请更正</li>
+        <li>如内容涉及未授权敏感信息，可申请撤稿</li>
+        <li>编辑部保留对稿件进行匿名化处理和格式编辑的权利</li>
+      </ul>
+    </section>
+
+    <section class="card section">
+      <h2>5. 风格说明（Tone Policy）</h2>
+      <ul class="list">
+        <li>允许幽默、允许自嘲，但不鼓励人身攻击</li>
+        <li>内容可“好笑”，但目标必须“有用”</li>
+        <li>我们不是在收集段子，我们在整理失败经验</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 Fail · Review Policy</div>
+      <div>页面文件：`review-policy.html`（可直接编辑）</div>
+    </footer>
+  </main>
+</body>
+</html>
