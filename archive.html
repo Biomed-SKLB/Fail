@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fail | 翻车档案馆</title>
+  <meta name="description" content="Fail - 翻车档案馆" />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #111827;
+      --soft: #eef2ff;
+      --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(99,102,241,0.10), transparent 40%),
+        radial-gradient(circle at 90% 0%, rgba(16,185,129,0.08), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(246,247,251,0.85);
+      border-bottom: 1px solid rgba(229,231,235,0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, #111827, #374151);
+      box-shadow: var(--shadow);
+      font-size: 14px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 12px;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .nav-links a:hover { background: #eef2f7; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.15s ease;
+      white-space: nowrap;
+      background: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: #fff;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover { background: #f9fafb; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      margin-top: 18px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(99,102,241,0.14), transparent 45%),
+        radial-gradient(circle at 85% 10%, rgba(16,185,129,0.10), transparent 35%);
+    }
+
+    .hero-content { position: relative; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #3730a3;
+      background: var(--soft);
+      border: 1px solid #c7d2fe;
+    }
+
+    h1 {
+      margin: 12px 0 10px;
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 75ch;
+      font-size: 15px;
+    }
+
+    .hero-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar {
+      margin-top: 16px;
+      padding: 14px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .search {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font: inherit;
+      background: #fff;
+      color: var(--text);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #374151;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+
+    .chip:hover { background: #f9fafb; }
+
+    .chip.active {
+      background: #111827;
+      color: #fff;
+      border-color: #111827;
+    }
+
+    .layout {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+    }
+
+    .panel { padding: 16px; }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-sub {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cases {
+      display: grid;
+      gap: 12px;
+    }
+
+    .case-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 14px;
+    }
+
+    .case-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .case-title {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .meta {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 11px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      white-space: nowrap;
+    }
+
+    .case-grid {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .case-row {
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 1px solid #eef2f7;
+      padding: 8px 10px;
+      font-size: 13px;
+      color: #334155;
+    }
+
+    .case-row b { color: #111827; }
+
+    .tips-list {
+      margin: 0;
+      padding-left: 18px;
+      color: #374151;
+      font-size: 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .fun-box {
+      margin-top: 12px;
+      border-radius: 14px;
+      border: 1px dashed #cbd5e1;
+      background: #fcfcff;
+      padding: 12px;
+    }
+
+    .fun-box h3 {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      margin: 28px 0 36px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      padding: 6px 8px;
+      border-radius: 10px;
+    }
+
+    .footer-links a:hover {
+      background: #edf2f7;
+      color: var(--text);
+    }
+
+    .hidden { display: none; }
+
+    @media (max-width: 920px) {
+      .toolbar { grid-template-columns: 1fr; }
+      .filter-group { justify-content: flex-start; }
+      .layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">F</div>
+        <div>
+          Fail
+          <small>翻车档案馆（欢迎围观，也欢迎投稿）</small>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="#cases">档案</a>
+        <a href="index.html#submit">上交黑历史</a>
+        <a href="#contact">联系</a>
+        <a class="btn btn-primary" href="index.html#submit">我要投稿</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero">
+      <div class="hero-content">
+        <span class="pill">Archive · Fail</span>
+        <h1>翻车档案馆</h1>
+        <p class="lead">
+          这里收录各种实验事故现场：离谱操作、迷惑结果、补救过程，以及“我再也不会这样做了”的人生感悟。
+          你可以把这里当成科研防坑指南——只是写法稍微有点抽象。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="index.html#submit">我也要上交黑历史 →</a>
+          <a class="btn btn-ghost" href="index.html">返回首页</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card toolbar" id="cases">
+      <input id="searchInput" class="search" type="text" placeholder="搜索关键词（例如：PCR / 细胞 / 电泳 / 试剂）" />
+
+      <div class="filter-group">
+        <button class="chip active" data-filter="all">全部</button>
+        <button class="chip" data-filter="pcr">PCR</button>
+        <button class="chip" data-filter="cell">细胞</button>
+        <button class="chip" data-filter="wb">WB/电泳</button>
+        <button class="chip" data-filter="reagent">试剂</button>
+        <button class="chip" data-filter="other">离谱奖</button>
+      </div>
+    </section>
+
+    <section class="layout">
+      <!-- 左边：案例列表 -->
+      <section class="card panel">
+        <h2 class="section-title">翻车案例</h2>
+        <p class="section-sub">下面这些都是示例内容，你后面可以改成你自己的真实投稿。</p>
+
+        <div class="cases" id="caseList">
+
+          <!-- 案例 1 -->
+          <article class="case-card" data-type="pcr" data-text="pcr 没条带 引物 退火 重跑">
+            <div class="case-head">
+              <div>
+                <h3 class="case-title">PCR 全军覆没，但我坚持怪机器（怪了半小时）</h3>
+                <div class="meta">投稿人：今天也在重跑PCR · 2026-02-24</div>
+              </div>
+              <span class="badge">PCR</span>
+            </div>
+            <div class="case-grid">
+              <div class="case-row"><b>事故概述：</b>跑了 8 个样，所有孔都没条带，连阴性对照都“干净得让人心碎”。</div>
+              <div class="case-row"><b>翻车点：</b>退火温度抄错了，整整高了 10℃。</div>
+              <div class="case-row"><b>抢救记录：</b>重配体系、重设程序、给 PCR 仪道歉。</div>
+              <div class="case-row"><b>教训总结：</b>开始前先看程序参数，不要一上来先怪世界。</div>
+            </div>
+          </article>
+
+          <!-- 案例 2 -->
+          <article class="case-card" data-type="cell" data-text="细胞 污染 真菌 培养箱 显微镜">
+            <div class="case-head">
+              <div>
+                <h3 class="case-title">细胞状态很好，直到我在显微镜里看见“蘑菇王国”</h3>
+                <div class="meta">投稿人：无菌操作全靠信念 · 2026-02-23</div>
+              </div>
+              <span class="badge">细胞</span>
+            </div>
+            <div class="case-grid">
+              <div class="case-row"><b>事故概述：</b>本来准备传代，结果发现培养瓶里飘着可疑小点，越看越像在开会。</div>
+              <div class="case-row"><b>翻车点：</b>上次操作时枪头盒开太久，还顺手摸了手机。</div>
+              <div class="case-row"><b>抢救记录：</b>整批丢弃、酒精猛擦、紫外灯照到我怀疑人生。</div>
+              <div class="case-row"><b>教训总结：</b>无菌操作不是态度问题，是动作问题。</div>
+            </div>
+          </article>
+
+          <!-- 案例 3 -->
+          <article class="case-card" data-type="wb" data-text="wb 电泳 marker 样品孔 加错 上样">
+            <div class="case-head">
+              <div>
+                <h3 class="case-title">把 Marker 加进样品孔后，我的表情和条带一样扭曲</h3>
+                <div class="meta">投稿人：手稳但脑子偶尔不稳 · 2026-02-22</div>
+              </div>
+              <span class="badge">WB/电泳</span>
+            </div>
+            <div class="case-grid">
+              <div class="case-row"><b>事故概述：</b>上样时动作流畅、心态稳定，跑完才发现 Marker 和样品位置全反了。</div>
+              <div class="case-row"><b>翻车点：</b>孔位没标，过于自信。</div>
+              <div class="case-row"><b>抢救记录：</b>拍照纪念，重跑一块胶，顺便把自己教育了一顿。</div>
+              <div class="case-row"><b>教训总结：</b>先标孔，再上样。字丑一点都比重跑强。</div>
+            </div>
+          </article>
+
+          <!-- 案例 4 -->
+          <article class="case-card" data-type="reagent" data-text="试剂 缓冲液 加反 pbst pbs 配错">
+            <div class="case-head">
+              <div>
+                <h3 class="case-title">试剂加错（而且加得很自信）</h3>
+                <div class="meta">投稿人：配液界的哲学家 · 2026-02-21</div>
+              </div>
+              <span class="badge">试剂</span>
+            </div>
+            <div class="case-grid">
+              <div class="case-row"><b>事故概述：</b>实验做得很丝滑，结果全程信号异常，最后发现缓冲液拿错了。</div>
+              <div class="case-row"><b>翻车点：</b>瓶子长得太像 + 我没看标签。</div>
+              <div class="case-row"><b>抢救记录：</b>从头再来，并决定给所有瓶子贴大字报。</div>
+              <div class="case-row"><b>教训总结：</b>“我应该没拿错”这句话，通常就是拿错了。</div>
+            </div>
+          </article>
+
+          <!-- 案例 5 -->
+          <article class="case-card" data-type="other" data-text="离谱 仪器 没开 忘记开电源 通宵">
+            <div class="case-head">
+              <div>
+                <h3 class="case-title">忙了一小时，最后发现仪器根本没开</h3>
+                <div class="meta">投稿人：通宵后战斗力随机 · 2026-02-20</div>
+              </div>
+              <span class="badge">离谱奖</span>
+            </div>
+            <div class="case-grid">
+              <div class="case-row"><b>事故概述：</b>操作流程全对，结果始终没反应，甚至开始怀疑人生和试剂纯度。</div>
+              <div class="case-row"><b>翻车点：</b>电源开关没按。</div>
+              <div class="case-row"><b>抢救记录：</b>按下开关，世界突然恢复正常。</div>
+              <div class="case-row"><b>教训总结：</b>排查故障先看电源，先看电源，先看电源。</div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 右边：说明 / 年度奖 -->
+      <aside class="card panel">
+        <h2 class="section-title">投稿须知（搞笑版）</h2>
+        <ul class="tips-list">
+          <li>欢迎真实翻车，欢迎离谱细节，但尽量不要编（编得太假会被识破）。</li>
+          <li>可以匿名投稿，毕竟大家都要在实验室继续做人。</li>
+          <li>如果有同门、老师、群聊截图，建议打码，给自己留条后路。</li>
+          <li>最好写上“怎么补救”和“下次怎么避免”，这样真的能帮到人。</li>
+        </ul>
+
+        <div class="fun-box">
+          <h3>🏆 年度离谱奖（示例）</h3>
+          <p class="muted">奖项：<b>《我明明按了开始》特别贡献奖</b></p>
+          <p class="muted">评语：流程全对，心态全对，唯独机器没开。</p>
+        </div>
+
+        <div class="fun-box">
+          <h3>📌 你以后怎么加新案例</h3>
+          <p class="muted">
+            复制左边任意一个 <code>&lt;article class="case-card"&gt;...&lt;/article&gt;</code>，
+            然后改标题、内容、日期、分类就行。
+          </p>
+        </div>
+
+        <div class="fun-box">
+          <h3>🔗 你的社媒入口（记得改）</h3>
+          <p class="muted">
+            你可以在这里放：小红书 / Notion / B站 / 公众号链接。<br/>
+            （目前这是示例页面）
+          </p>
+          <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
+            <a class="btn btn-ghost" href="https://www.xiaohongshu.com/" target="_blank">小红书</a>
+            <a class="btn btn-ghost" href="#" target="_blank">Notion</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div>© 2026 Fail · 翻车不可耻，藏着才浪费</div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="#cases">档案</a>
+        <a href="index.html#submit">投稿</a>
+        <a href="mailto:yourmail@example.com">联系我</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const chips = document.querySelectorAll(".chip");
+    const cards = document.querySelectorAll(".case-card");
+    const searchInput = document.getElementById("searchInput");
+    let currentFilter = "all";
+
+    function renderCards() {
+      const q = searchInput.value.trim().toLowerCase();
+
+      cards.forEach(card => {
+        const type = card.dataset.type;
+        const text = card.dataset.text.toLowerCase();
+        const matchType = (currentFilter === "all" || type === currentFilter);
+        const matchText = (!q || text.includes(q) || card.innerText.toLowerCase().includes(q));
+
+        if (matchType && matchText) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        chips.forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        currentFilter = chip.dataset.filter;
+        renderCards();
+      });
+    });
+
+    searchInput.addEventListener("input", renderCards);
+  </script>
+</body>
+</html>
