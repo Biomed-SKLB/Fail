@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fail | Editorial Board</title>
+  <meta name="description" content="Fail 编委会" />
+  <style>
+    :root { --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --accent:#111827; --radius:18px; --shadow:0 10px 30px rgba(17,24,39,.08); }
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(99,102,241,0.10), transparent 40%),
+        radial-gradient(circle at 90% 0%, rgba(16,185,129,0.08), transparent 35%),
+        var(--bg);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(246,247,251,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(229,231,235,.8)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#111827,#374151);box-shadow:var(--shadow)}
+    .nav-links{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-links a{padding:8px 12px;border-radius:12px;font-size:14px;color:#374151}
+    .nav-links a:hover{background:#eef2f7}
+
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero,.section{margin-top:18px;padding:18px}
+    .pill{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe}
+    h1{margin:12px 0 8px;font-size:28px}
+    h2{margin:0 0 10px;font-size:18px}
+    .muted{color:var(--muted);font-size:14px}
+
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .person-card{
+      border:1px solid var(--line); border-radius:14px; padding:14px; background:#fff;
+      display:grid; gap:6px;
+    }
+    .role{font-size:12px;color:#6b7280}
+    .name{font-weight:700}
+    .bio{font-size:13px;color:#374151}
+
+    .list{margin:0;padding-left:18px;display:grid;gap:8px;color:#374151;font-size:14px}
+    .tip{margin-top:10px;border:1px dashed #cbd5e1;background:#fcfcff;border-radius:12px;padding:12px;font-size:13px;color:#334155}
+
+    .footer{margin:28px 0 36px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+    @media (max-width:900px){.grid2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand"><div class="logo">F</div><div>Fail</div></div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="archive.html">归档</a>
+        <a href="submit.html">投稿</a>
+        <a href="guidelines.html">作者指南</a>
+        <a href="review-policy.html">审稿政策</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero">
+      <span class="pill">Editorial Board</span>
+      <h1>编委会（Editorial Board）</h1>
+      <p class="muted">
+        这页完全可编辑。你现在可以先放自己，后面再补同学、朋友、联合编辑。
+        即使只有 1 个人，也完全可以写成正规期刊风格。
+      </p>
+    </section>
+
+    <section class="card section">
+      <h2>核心编辑团队</h2>
+      <div class="grid2">
+        <div class="person-card">
+          <div class="role">Founder & Editor-in-Chief</div>
+          <div class="name">你的名字 / 你的代号（这里改）</div>
+          <div class="bio">负责期刊方向、稿件筛选、终审与栏目规划。研究兴趣：实验失败复盘、科研方法学经验整理。</div>
+        </div>
+
+        <div class="person-card">
+          <div class="role">Managing Editor</div>
+          <div class="name">（可留空 / 招募中）</div>
+          <div class="bio">负责稿件排期、格式整理、归档维护、投稿沟通。</div>
+        </div>
+
+        <div class="person-card">
+          <div class="role">Section Editor · PCR Failure Notes</div>
+          <div class="name">（可留空 / 招募中）</div>
+          <div class="bio">负责 PCR 类稿件初筛、栏目维护与专题策划。</div>
+        </div>
+
+        <div class="person-card">
+          <div class="role">Section Editor · Cell Culture Incidents</div>
+          <div class="name">（可留空 / 招募中）</div>
+          <div class="bio">负责细胞培养相关稿件的收录与分类。</div>
+        </div>
+      </div>
+
+      <div class="tip">
+        <b>你怎么编辑：</b>把每个卡片里的“名字 / 简介”直接改文字就行。<br/>
+        想新增编委，就复制一个 <code>person-card</code> 区块再改内容。
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>编委会职责（可改）</h2>
+      <ul class="list">
+        <li>维护收稿范围与作者指南</li>
+        <li>对稿件进行真实性与可复用性初筛</li>
+        <li>在不影响隐私的前提下优化表达与结构</li>
+        <li>维护归档页面与期号结构（Vol / Issue）</li>
+        <li>处理更正、撤稿与隐私相关请求</li>
+      </ul>
+    </section>
+
+    <section class="card section">
+      <h2>编辑部联系方式（可改）</h2>
+      <ul class="list">
+        <li>邮箱：yourmail@example.com</li>
+        <li>投稿入口：<a href="submit.html">submit.html</a></li>
+        <li>作者指南：<a href="guidelines.html">guidelines.html</a></li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 Fail · Editorial Board</div>
+      <div>页面文件：`editorial-board.html`（可直接编辑）</div>
+    </footer>
+  </main>
+</body>
+</html>
