@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fail | 实验翻车快乐老家</title>
-  <meta name="description" content="Fail - 实验翻车名场面收集站（恶搞版）" />
+  <title>Fail | 实验失败期刊</title>
+  <meta name="description" content="Fail - 实验失败期刊（Journal of Experimental Failure）" />
   <style>
     :root {
       --bg: #f6f7fb;
@@ -17,10 +17,8 @@
       --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
       --radius: 18px;
     }
-
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -31,296 +29,155 @@
       color: var(--text);
       line-height: 1.6;
     }
-
     a { color: inherit; text-decoration: none; }
-
-    .wrap {
-      width: min(1100px, calc(100% - 32px));
-      margin: 0 auto;
-    }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 100;
       backdrop-filter: blur(10px);
-      background: rgba(246,247,251,0.8);
+      background: rgba(246,247,251,0.85);
       border-bottom: 1px solid rgba(229,231,235,0.8);
     }
-
     .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 0;
-      flex-wrap: wrap;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; padding: 14px 0; flex-wrap: wrap;
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-    }
-
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
     .logo {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: linear-gradient(135deg, #111827, #374151);
-      box-shadow: var(--shadow);
-      font-size: 14px;
+      width: 34px; height: 34px; border-radius: 12px; display: grid; place-items: center;
+      color: #fff; background: linear-gradient(135deg, #111827, #374151);
+      box-shadow: var(--shadow); font-size: 14px;
     }
-
     .brand small {
-      display: block;
-      color: var(--muted);
-      font-weight: 500;
-      font-size: 12px;
-      margin-top: 1px;
+      display: block; color: var(--muted); font-weight: 500; font-size: 12px; margin-top: 1px;
     }
 
     .nav-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
+      display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
     }
-
     .nav-links a {
-      padding: 8px 12px;
-      border-radius: 12px;
-      font-size: 14px;
-      color: #374151;
+      padding: 8px 12px; border-radius: 12px; font-size: 14px; color: #374151;
     }
-
     .nav-links a:hover { background: #eef2f7; }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.15s ease;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 14px; border-radius: 12px; border: 1px solid transparent;
+      font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.15s ease; white-space: nowrap;
     }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: var(--shadow);
-    }
-
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow); }
     .btn-primary:hover { transform: translateY(-1px); }
-
-    .btn-ghost {
-      background: #fff;
-      border-color: var(--line);
-      color: var(--text);
-    }
-
+    .btn-ghost { background: #fff; border-color: var(--line); color: var(--text); }
     .btn-ghost:hover { background: #f9fafb; }
 
-    .hero {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 16px;
-    }
-
     .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); box-shadow: var(--shadow);
     }
 
+    .hero {
+      margin-top: 18px; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 16px;
+    }
     .hero-main {
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
+      padding: 24px; position: relative; overflow: hidden;
     }
-
     .hero-main::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+      content: ""; position: absolute; inset: 0; pointer-events: none;
       background:
         radial-gradient(circle at 15% 15%, rgba(99,102,241,0.14), transparent 45%),
         radial-gradient(circle at 85% 10%, rgba(16,185,129,0.10), transparent 35%);
     }
-
     .hero-content { position: relative; }
-
     .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #3730a3;
-      background: var(--accent-soft);
-      border: 1px solid #c7d2fe;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+      color: #3730a3; background: var(--accent-soft); border: 1px solid #c7d2fe;
     }
 
     h1 {
-      margin: 12px 0 10px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.12;
-      letter-spacing: -0.02em;
+      margin: 12px 0 10px; font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.12; letter-spacing: -0.02em;
     }
+    .lead { margin: 0; color: var(--muted); max-width: 68ch; font-size: 15px; }
+    .hero-actions { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
 
-    .lead {
-      margin: 0;
-      color: var(--muted);
-      max-width: 60ch;
-      font-size: 15px;
-    }
-
-    .hero-actions {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .mini-grid {
-      display: grid;
-      gap: 12px;
-    }
-
+    .mini-grid { display: grid; gap: 12px; }
     .stat {
-      padding: 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      padding: 14px; display: flex; align-items: center; gap: 12px;
     }
-
     .stat-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      font-size: 15px;
+      width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center;
+      background: #f8fafc; border: 1px solid var(--line); font-size: 15px;
     }
+    .stat-label { color: var(--muted); font-size: 12px; }
+    .stat-value { font-weight: 700; margin-top: 2px; font-size: 14px; }
 
-    .stat-label {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .stat-value {
-      font-weight: 700;
-      margin-top: 2px;
-      font-size: 14px;
-    }
+    .editor-note { padding: 16px; }
+    .editor-note h3 { margin: 0 0 8px; font-size: 15px; }
+    .editor-note p { margin: 0; color: var(--muted); font-size: 13px; }
 
     .grid-2 {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
     }
-
     .box { padding: 18px; }
-
-    .box h2 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-    }
-
-    .muted {
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .box h2 { margin: 0 0 8px; font-size: 18px; letter-spacing: -0.01em; }
+    .muted { color: var(--muted); font-size: 14px; }
 
     .list {
-      list-style: none;
-      margin: 12px 0 0;
-      padding: 0;
-      display: grid;
-      gap: 8px;
+      list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px;
     }
-
     .list li {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-      font-size: 14px;
-      color: #374151;
+      display: flex; gap: 8px; align-items: flex-start; font-size: 14px; color: #374151;
     }
-
     .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #6b7280;
-      margin-top: 8px;
-      flex: 0 0 auto;
+      width: 6px; height: 6px; border-radius: 999px; background: #6b7280; margin-top: 8px; flex: 0 0 auto;
     }
 
-    .submit-card {
+    .issue-card { margin-top: 18px; padding: 18px; }
+    .issue-top {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap;
+    }
+    .issue-meta {
+      font-size: 12px; color: var(--muted); margin-top: 4px;
+    }
+    .tag {
+      display: inline-flex; border: 1px solid var(--line); background: #f8fafc;
+      border-radius: 999px; padding: 6px 10px; font-size: 12px; color: #374151;
+    }
+
+    .paper-list {
+      margin-top: 12px; display: grid; gap: 10px;
+    }
+    .paper-item {
+      border: 1px solid var(--line); border-radius: 12px; padding: 12px;
+      display: flex; justify-content: space-between; gap: 10px; align-items: flex-start;
+    }
+    .paper-item h4 {
+      margin: 0; font-size: 14px; line-height: 1.35;
+    }
+    .paper-item p {
+      margin: 4px 0 0; font-size: 12px; color: var(--muted);
+    }
+
+    .cta-grid {
       margin-top: 18px;
-      padding: 18px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
     }
+    .cta-card {
+      padding: 14px; border-radius: 14px; border: 1px solid var(--line);
+      background: #fff; display: grid; gap: 8px;
+    }
+    .cta-card h3 { margin: 0; font-size: 14px; }
+    .cta-card p { margin: 0; font-size: 12px; color: var(--muted); }
 
-    .form-grid {
-      margin-top: 10px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+    .submit-banner {
+      margin-top: 18px; padding: 18px;
+      display: flex; justify-content: space-between; gap: 16px; align-items: center; flex-wrap: wrap;
     }
-
-    .field {
-      display: grid;
-      gap: 6px;
-    }
-
-    .field label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #374151;
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 10px 12px;
-      font: inherit;
-      background: #fff;
-      color: var(--text);
-    }
-
-    .field textarea {
-      min-height: 110px;
-      resize: vertical;
-      grid-column: 1 / -1;
-    }
-
-    .helper {
-      color: var(--muted);
-      font-size: 12px;
-    }
+    .submit-banner h2 { margin: 0; font-size: 18px; }
+    .submit-banner p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
 
     .footer {
       margin: 28px 0 36px;
@@ -334,222 +191,217 @@
       color: var(--muted);
       font-size: 13px;
     }
+    .footer-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .footer-links a { padding: 6px 8px; border-radius: 10px; }
+    .footer-links a:hover { background: #edf2f7; color: var(--text); }
 
-    .footer-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      padding: 6px 8px;
-      border-radius: 10px;
-    }
-
-    .footer-links a:hover {
-      background: #edf2f7;
-      color: var(--text);
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
       .grid-2 { grid-template-columns: 1fr; }
-      .form-grid { grid-template-columns: 1fr; }
+      .cta-grid { grid-template-columns: 1fr 1fr; }
       .nav-links { width: 100%; }
+    }
+    @media (max-width: 640px) {
+      .cta-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
-  <!-- 顶部 -->
   <header class="topbar">
     <div class="wrap nav">
       <div class="brand">
         <div class="logo">F</div>
         <div>
           Fail
-          <small>专门收集实验室离谱现场，顺便抢救一点科研尊严</small>
+          <small>Journal of Experimental Failure · 实验失败期刊</small>
         </div>
       </div>
 
       <div class="nav-links">
-        <a href="#about">关于</a>
-        <a href="#archive.html">档案</a>
-        <a href="#submit">上交</a>
-        <a href="#contact">联系</a>
-        <a class="btn btn-primary" href="#submit">Start</a>
+        <a href="index.html">首页</a>
+        <a href="archive.html">归档</a>
+        <a href="submit.html">投稿</a>
+        <a href="guidelines.html">作者指南</a>
+        <a href="editorial-board.html">编委会</a>
+        <a href="review-policy.html">审稿政策</a>
+        <a class="btn btn-primary" href="submit.html">Submit Manuscript</a>
       </div>
     </div>
   </header>
 
   <main class="wrap">
 
-    <!-- 首屏 -->
     <section class="hero">
       <div class="card hero-main">
         <div class="hero-content">
-          <span class="pill">Welcome · Fail</span>
-          <h1>实验失败不可怕。<br>可怕的是监控拍得太清楚。</h1>
+          <span class="pill">Current Journal · Fail</span>
+          <h1>《Fail》实验失败期刊</h1>
           <p class="lead">
-            欢迎来到 Fail：一个专门收集实验翻车名场面的小站。
-            PCR全灭、细胞污染、试剂加反、电泳跑飞、培养箱忘关门……
-            这里不负责嘲笑你（至少明面上不），只负责把翻车变成大家的经验包。
+            记录失败，复盘原因，减少下一次失败。<br/>
+            我们以期刊的方式收录真实实验翻车案例、补救过程与复盘总结，
+            把“本来很顺，结果突然离谱”的经历整理成后来人能用的方法学资产。
           </p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#submit">我要上交黑历史 →</a>
-            <a class="btn btn-ghost" href="archive.html">围观翻车档案</a>
+            <a class="btn btn-primary" href="submit.html">Submit Manuscript →</a>
+            <a class="btn btn-ghost" href="archive.html">Browse Archives</a>
           </div>
         </div>
       </div>
 
       <div class="mini-grid">
         <div class="card stat">
-          <div class="stat-icon">🍉</div>
+          <div class="stat-icon">📘</div>
           <div>
-            <div class="stat-label">吃瓜群众</div>
-            <div class="stat-value">100k+ 围观</div>
-          </div>
-        </div>
-        <div class="card stat">
-          <div class="stat-icon">🧠</div>
-          <div>
-            <div class="stat-label">评论区支招</div>
-            <div class="stat-value">24h 内到达</div>
+            <div class="stat-label">Current Issue</div>
+            <div class="stat-value">Vol.1 No.1</div>
           </div>
         </div>
         <div class="card stat">
           <div class="stat-icon">🧪</div>
           <div>
-            <div class="stat-label">内容成分</div>
-            <div class="stat-value">翻车 / 补救 / 复盘</div>
+            <div class="stat-label">已收录案例</div>
+            <div class="stat-value">12 篇（示例）</div>
           </div>
         </div>
         <div class="card stat">
-          <div class="stat-icon">🌀</div>
+          <div class="stat-icon">🗂️</div>
           <div>
-            <div class="stat-label">网站气质</div>
-            <div class="stat-value">抽象但有用</div>
+            <div class="stat-label">栏目数量</div>
+            <div class="stat-value">6 个栏目</div>
           </div>
+        </div>
+        <div class="card stat">
+          <div class="stat-icon">🧠</div>
+          <div>
+            <div class="stat-label">平均复盘长度</div>
+            <div class="stat-value">420 字（示例）</div>
+          </div>
+        </div>
+        <div class="card editor-note">
+          <h3>编辑寄语</h3>
+          <p>
+            失败并非科研的边角料，而是最常被忽略的方法学资产。
+            —— Fail 编辑部（这句你可以随时改）
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- 两块内容 -->
+    <section class="card issue-card">
+      <div class="issue-top">
+        <div>
+          <h2 style="margin:0; font-size:18px;">Current Issue · Vol.1 No.1 (2026)</h2>
+          <div class="issue-meta">Theme: First Failure, Best Lessons · 本期主题：翻车第一课</div>
+        </div>
+        <span class="tag">Open Submission</span>
+      </div>
+
+      <div class="paper-list">
+        <div class="paper-item">
+          <div>
+            <h4>PCR 全军覆没，但我坚持怪机器（怪了半小时）</h4>
+            <p>PCR Failure Notes · 作者代号：今天也在重跑PCR · 2026-02-24</p>
+          </div>
+          <a class="btn btn-ghost" href="archive.html">View</a>
+        </div>
+
+        <div class="paper-item">
+          <div>
+            <h4>细胞状态很好，直到显微镜里出现“蘑菇王国”</h4>
+            <p>Cell Culture Incidents · 作者代号：无菌操作全靠信念 · 2026-02-23</p>
+          </div>
+          <a class="btn btn-ghost" href="archive.html">View</a>
+        </div>
+
+        <div class="paper-item">
+          <div>
+            <h4>把 Marker 加进样品孔后，我的表情和条带一样扭曲</h4>
+            <p>Electrophoresis & WB Misadventures · 作者代号：手稳但脑子随机 · 2026-02-22</p>
+          </div>
+          <a class="btn btn-ghost" href="archive.html">View</a>
+        </div>
+      </div>
+    </section>
+
     <section class="grid-2">
-      <div class="card box" id="about">
-        <h2>关于 Fail</h2>
+      <div class="card box">
+        <h2>期刊简介</h2>
         <p class="muted">
-          Fail 是一个“实验翻车公开处刑（并认真复盘）”网站。
-          我们欢迎你投稿任何让你沉默三分钟的实验事故：
-          配错缓冲液、离心忘平衡、PCR像心电图、细胞被真菌统治……
-          来都来了，顺手总结一下，下次大家一起少翻一次车。
+          《Fail》是一份以实验失败案例为核心的开放式期刊。我们收录真实的实验翻车记录、
+          补救过程与复盘总结，用学术期刊的方式整理科研路上的“失败经验”。
         </p>
         <ul class="list">
-          <li><span class="dot"></span><span>可以发翻车现场，也可以发翻车后续抢救记录</span></li>
-          <li><span class="dot"></span><span>欢迎配图，但请先给同门和群聊打码（求生欲）</span></li>
-          <li><span class="dot"></span><span>搞笑是表面，避坑才是正事</span></li>
-          <li><span class="dot"></span><span>目标：让每一次崩溃都稍微值回票价</span></li>
+          <li><span class="dot"></span><span>收录范围：PCR、细胞培养、WB/电泳、试剂配制、操作疏漏等</span></li>
+          <li><span class="dot"></span><span>优先稿件：复盘结构清晰、可复用性强、对后来人有帮助</span></li>
+          <li><span class="dot"></span><span>支持匿名投稿，建议附上补救过程与经验总结</span></li>
+          <li><span class="dot"></span><span>风格允许幽默，但目标始终是“有用”</span></li>
         </ul>
       </div>
 
-      <div class="card box" id="archive">
-        <h2>翻车档案馆</h2>
+      <div class="card box">
+        <h2>期刊栏目（Sections）</h2>
         <p class="muted">
-          这里放你的翻车合集：小红书、Notion、B站、公众号都行。
-          后面你还可以按专题分档：PCR专区、细胞专区、WB专区、离谱操作年度总决赛……
+          你可以把这些栏目当作“专题分区”。后续在归档页里按栏目和期号管理，会很像正式期刊。
         </p>
-        <div style="margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <!-- 把下面两个链接改成你自己的 -->
-          <a class="btn btn-primary" href="archive.html">查看翻车档案 →</a>
-          <a class="btn btn-ghost" href="#" target="_blank">翻车投稿须知</a>
-        </div>
-        <p class="helper" style="margin-top: 8px;">
-          提示：后面把按钮链接换成你自己的主页/Notion/表单链接就行。
-        </p>
+        <ul class="list">
+          <li><span class="dot"></span><span><b>PCR Failure Notes</b> · PCR 翻车记录</span></li>
+          <li><span class="dot"></span><span><b>Cell Culture Incidents</b> · 细胞培养事故</span></li>
+          <li><span class="dot"></span><span><b>Electrophoresis & WB Misadventures</b> · 电泳/WB迷惑行为</span></li>
+          <li><span class="dot"></span><span><b>Reagent & Buffer Errors</b> · 试剂/缓冲液错误</span></li>
+          <li><span class="dot"></span><span><b>Operational Oversights</b> · 操作疏漏</span></li>
+          <li><span class="dot"></span><span><b>Best of Chaos</b> · 年度离谱奖</span></li>
+        </ul>
       </div>
     </section>
 
-    <!-- 投稿表单（演示） -->
-    <section class="card submit-card" id="submit">
-      <h2 style="margin:0; font-size: 18px;">黑历史上交入口（演示版）</h2>
-      <p class="muted" style="margin: 6px 0 0;">
-        这是一个前端演示表单（放心，暂时不会真的上传你的黑历史）。
-        你以后可以把它换成真实表单：飞书表单 / 金山表单 / 问卷星 / Google Form。
-      </p>
+    <section class="cta-grid">
+      <a class="cta-card" href="submit.html">
+        <h3>Submit Manuscript</h3>
+        <p>提交稿件入口（外部表单 / 邮件投稿都可）</p>
+      </a>
 
-      <form id="demoForm" class="form-grid">
-        <div class="field">
-          <label for="name">你的代号（可匿名）</label>
-          <input id="name" type="text" placeholder="例如：今天也在重跑PCR" />
-        </div>
+      <a class="cta-card" href="guidelines.html">
+        <h3>Author Guidelines</h3>
+        <p>作者指南、格式模板、匿名与打码要求</p>
+      </a>
 
-        <div class="field">
-          <label for="email">邮箱（选填，方便通知你上墙）</label>
-          <input id="email" type="email" placeholder="you@example.com" />
-        </div>
+      <a class="cta-card" href="editorial-board.html">
+        <h3>Editorial Board</h3>
+        <p>编委会、编辑职责与编辑部联系方式</p>
+      </a>
 
-        <div class="field">
-          <label for="type">翻车类型</label>
-          <select id="type">
-            <option>PCR 全军覆没</option>
-            <option>细胞离奇去世</option>
-            <option>WB/电泳迷惑行为</option>
-            <option>试剂加错（且加得很自信）</option>
-            <option>仪器没开（人先忙半天）</option>
-            <option>其他离谱情况</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="link">翻车证据链接（可选）</label>
-          <input id="link" type="url" placeholder="https://..." />
-        </div>
-
-        <div class="field">
-          <label for="title">这次事故怎么命名</label>
-          <input id="title" type="text" placeholder="例如：把marker加进了样品孔" />
-        </div>
-
-        <div class="field">
-          <label for="tag">关键词（可选）</label>
-          <input id="tag" type="text" placeholder="例如：PCR / 手抖 / 通宵白干" />
-        </div>
-
-        <div class="field">
-          <label for="desc">事故经过 + 抢救记录 + 教训</label>
-          <textarea id="desc" placeholder="请详细描述翻车经过：你本来想干嘛？哪里开始不对劲？怎么补救的？最后悟出了什么人生道理？"></textarea>
-        </div>
-
-        <div style="grid-column: 1 / -1; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-          <button type="submit" class="btn btn-primary">提交黑历史（演示）</button>
-          <span id="status" class="helper">当前只是演示，不会上传到互联网社死中心。</span>
-        </div>
-      </form>
+      <a class="cta-card" href="review-policy.html">
+        <h3>Review Policy</h3>
+        <p>审稿原则、录用标准与更正政策</p>
+      </a>
     </section>
 
-    <!-- 页脚 -->
-    <footer class="footer" id="contact">
-      <div>© 2026 Fail · 今天翻的车，明天就是别人的路标</div>
+    <!-- 这里替代了你原来的内嵌表单：只保留投稿按钮 -->
+    <section class="card submit-banner">
+      <div>
+        <h2>稿件提交（Submit Manuscript）</h2>
+        <p>
+          首页不再展示表单。请前往独立投稿页提交稿件（更像期刊门户，也更方便你后续接真实表单）。
+        </p>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="submit.html">进入投稿页 →</a>
+        <a class="btn btn-ghost" href="guidelines.html">先看作者指南</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 Fail · Journal of Experimental Failure</div>
       <div class="footer-links">
-        <a href="#about">关于</a>
-        <a href="archive.html">档案</a>
-        <a href="#">社媒</a>
-        <a href="mailto:yourmail@example.com">联系我</a>
+        <a href="archive.html">归档</a>
+        <a href="submit.html">投稿</a>
+        <a href="guidelines.html">作者指南</a>
+        <a href="editorial-board.html">编委会</a>
+        <a href="review-policy.html">审稿政策</a>
+        <a href="mailto:yourmail@example.com">编辑部邮箱</a>
       </div>
     </footer>
   </main>
-
-  <script>
-    // 演示表单：点击提交时，只显示一条提示（不上传）
-    const form = document.getElementById("demoForm");
-    const status = document.getElementById("status");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim() || "匿名翻车选手";
-      status.textContent = "✅ 已收到 " + name + " 的黑历史（演示模式，暂未上传到互联网社死中心）";
-    });
-  </script>
 </body>
 </html>
-
