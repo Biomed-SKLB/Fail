@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fail | Submit Manuscript</title>
+  <meta name="description" content="Fail 投稿页" />
+  <style>
+    :root {
+      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --line:#e5e7eb;
+      --accent:#111827; --shadow:0 10px 30px rgba(17,24,39,.08); --radius:18px;
+    }
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+      background:var(--bg); color:var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(99,102,241,0.10), transparent 40%),
+        radial-gradient(circle at 90% 0%, rgba(16,185,129,0.08), transparent 35%),
+        var(--bg);
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(980px,calc(100% - 32px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(246,247,251,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(229,231,235,.8)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#111827,#374151);box-shadow:var(--shadow)}
+    .brand small{display:block;color:var(--muted);font-size:12px;font-weight:500}
+    .nav-links{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .nav-links a{padding:8px 12px;border-radius:12px;font-size:14px;color:#374151}
+    .nav-links a:hover{background:#eef2f7}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid transparent;font-weight:600;font-size:14px}
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow)}
+    .btn-ghost{background:#fff;border-color:var(--line)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero{margin-top:18px;padding:22px}
+    .pill{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe}
+    h1{margin:12px 0 8px;font-size:30px;line-height:1.15}
+    .muted{color:var(--muted)}
+    .grid{margin-top:16px;display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    .panel{padding:16px}
+    .panel h2{margin:0 0 8px;font-size:18px}
+    .list{margin:0;padding-left:18px;color:#374151;display:grid;gap:8px;font-size:14px}
+    .codebox{margin-top:10px;border:1px dashed #cbd5e1;border-radius:12px;padding:12px;background:#fcfcff;font-size:13px;color:#334155}
+    .footer{margin:28px 0 36px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">F</div>
+        <div>Fail<small>Submit Manuscript</small></div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="archive.html">归档</a>
+        <a href="guidelines.html">作者指南</a>
+        <a href="editorial-board.html">编委会</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero">
+      <span class="pill">Submission Portal</span>
+      <h1>Submit Manuscript</h1>
+      <p class="muted">
+        首页已不展示内嵌表单。请通过外部投稿入口提交稿件（推荐飞书表单 / 金山表单 / 问卷星 / Google Form）。
+        这样更像期刊投稿系统，也更方便后续运营。
+      </p>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <!-- 这里换成你的真实投稿表单链接 -->
+        <a class="btn btn-primary" href="https://example.com/your-form-link" target="_blank">打开投稿表单 →</a>
+        <a class="btn btn-ghost" href="guidelines.html">查看作者指南</a>
+      </div>
+      <div class="codebox">
+        <b>你需要改的地方：</b><br/>
+        把上面按钮里的 <code>https://example.com/your-form-link</code> 换成你的真实投稿链接。
+      </div>
+    </section>
+
+    <section class="grid">
+      <section class="card panel">
+        <h2>投稿前检查清单</h2>
+        <ul class="list">
+          <li>案例是否为真实实验经历（允许幽默表达，但不要虚构）</li>
+          <li>是否写清：事故经过 / 错误定位 / 补救过程 / 复盘总结</li>
+          <li>涉及他人、群聊、实验室信息的截图是否已打码</li>
+          <li>是否选择了正确栏目（PCR / 细胞 / WB / 试剂 / 操作）</li>
+          <li>如需匿名发布，是否已在稿件中去除可识别身份信息</li>
+        </ul>
+      </section>
+
+      <aside class="card panel">
+        <h2>建议稿件结构</h2>
+        <ul class="list">
+          <li><b>Title</b>：稿件标题（事故一句话概括）</li>
+          <li><b>Section</b>：栏目分类</li>
+          <li><b>Background</b>：实验背景与目的</li>
+          <li><b>Incident</b>：事故经过</li>
+          <li><b>Error Source</b>：错误定位</li>
+          <li><b>Rescue Attempt</b>：补救过程</li>
+          <li><b>Lessons Learned</b>：复盘总结</li>
+        </ul>
+        <div class="codebox">
+          你也可以把这页做成“投稿系统入口页”，以后接第三方表单或邮箱投稿都很方便。
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 Fail · Submission Portal</div>
+      <div>编辑部邮箱：<a href="mailto:yourmail@example.com">yourmail@example.com</a></div>
+    </footer>
+  </main>
+</body>
+</html>
