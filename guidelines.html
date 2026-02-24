@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fail | Author Guidelines</title>
+  <meta name="description" content="Fail 作者指南" />
+  <style>
+    :root { --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --accent:#111827; --radius:18px; --shadow:0 10px 30px rgba(17,24,39,.08); }
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(99,102,241,0.10), transparent 40%),
+        radial-gradient(circle at 90% 0%, rgba(16,185,129,0.08), transparent 35%),
+        var(--bg);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(980px,calc(100% - 32px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(246,247,251,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(229,231,235,.8)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#111827,#374151);box-shadow:var(--shadow)}
+    .nav-links{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-links a{padding:8px 12px;border-radius:12px;font-size:14px;color:#374151}
+    .nav-links a:hover{background:#eef2f7}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero,.section{margin-top:18px;padding:18px}
+    .pill{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe}
+    h1{margin:12px 0 8px;font-size:28px} h2{margin:0 0 8px;font-size:18px}
+    .muted{color:var(--muted);font-size:14px}
+    .list{margin:0;padding-left:18px;display:grid;gap:8px;color:#374151;font-size:14px}
+    .template{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:12px;font-size:13px;color:#334155;white-space:pre-wrap}
+    .footer{margin:28px 0 36px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid transparent;font-weight:600;font-size:14px}
+    .btn-primary{background:#111827;color:#fff}
+    .btn-ghost{background:#fff;border-color:var(--line)}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand"><div class="logo">F</div><div>Fail</div></div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="archive.html">归档</a>
+        <a href="submit.html">投稿</a>
+        <a href="editorial-board.html">编委会</a>
+        <a href="review-policy.html">审稿政策</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero">
+      <span class="pill">Author Guidelines</span>
+      <h1>作者指南（Author Guidelines）</h1>
+      <p class="muted">
+        这页是期刊化运营的核心页面之一。你可以随时编辑这里的规则、模板、格式要求和匿名说明。
+      </p>
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="submit.html">Submit Manuscript →</a>
+        <a class="btn btn-ghost" href="review-policy.html">查看审稿政策</a>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>1. 收稿范围（Scope）</h2>
+      <ul class="list">
+        <li>PCR 失败案例（无条带、非特异、体系错误等）</li>
+        <li>细胞培养事故（污染、状态异常、传代问题等）</li>
+        <li>电泳 / WB 迷惑行为（上样、转膜、显色等）</li>
+        <li>试剂与缓冲液错误（配错、拿错、污染等）</li>
+        <li>实验操作疏漏（仪器未开、参数错误、记录缺失等）</li>
+      </ul>
+    </section>
+
+    <section class="card section">
+      <h2>2. 稿件结构（Recommended Structure）</h2>
+      <ul class="list">
+        <li><b>Title</b>（稿件标题）</li>
+        <li><b>Section</b>（栏目分类）</li>
+        <li><b>Background</b>（实验背景与目的）</li>
+        <li><b>Incident</b>（事故经过）</li>
+        <li><b>Error Source</b>（错误定位）</li>
+        <li><b>Rescue Attempt</b>（补救过程）</li>
+        <li><b>Lessons Learned</b>（复盘总结）</li>
+      </ul>
+      <div class="template" style="margin-top:10px;">【Title】
+（用一句话概括本次事故）
+
+【Section】
+PCR Failure Notes / Cell Culture Incidents / ...
+
+【Background】
+本次实验目的、样本类型、关键步骤（简述）
+
+【Incident】
+具体发生了什么？从哪个步骤开始不对劲？
+
+【Error Source】
+最终确认的问题出在哪里？
+
+【Rescue Attempt】
+采取了哪些补救措施？是否有效？
+
+【Lessons Learned】
+这次事故给出的可复用经验是什么？
+</div>
+    </section>
+
+    <section class="card section">
+      <h2>3. 匿名与隐私（Anonymity & Privacy）</h2>
+      <ul class="list">
+        <li>支持匿名投稿（推荐使用“作者代号”）</li>
+        <li>截图请打码：同门姓名、老师姓名、群聊信息、实验室信息等</li>
+        <li>避免上传可识别的敏感实验数据（尤其涉合作/未公开项目）</li>
+        <li>如有争议内容，编辑部保留修改或拒稿权利</li>
+      </ul>
+    </section>
+
+    <section class="card section">
+      <h2>4. 风格建议（Writing Style）</h2>
+      <ul class="list">
+        <li>允许幽默表达，但请保证事实清楚</li>
+        <li>优先录用“复盘结构清晰”的稿件</li>
+        <li>建议写明“下次如何避免”，这会非常加分</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 Fail · Author Guidelines</div>
+      <div>可直接编辑本页内容（GitHub 里修改 `guidelines.html` 即可）</div>
+    </footer>
+  </main>
+</body>
+</html>
